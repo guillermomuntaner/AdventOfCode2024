@@ -19,3 +19,12 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+fun <T, E>checkEquals(expected: T, actual: E) {
+    if (expected != actual) {
+        val message = "Check failed. Expected $expected, got $actual"
+        throw IllegalStateException(message)
+    }
+}
+
+fun <T>Any?.checkEqualTo(expected: T) = checkEquals(expected = expected, actual = this)
