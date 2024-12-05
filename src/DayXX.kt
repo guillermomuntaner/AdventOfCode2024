@@ -13,6 +13,6 @@ fun main() {
     part2(testInput).checkEqualTo(1)
 
     val input = readInput("Day${day}")
-    part1(input).also { println() }.checkEqualTo(1)
-    part2(input).also { println() }.checkEqualTo(1)
+    part1(input).also { it.println() }.checkEqualTo(1)
+    part2(input).also { it.println() }.checkEqualTo(1)
 }
