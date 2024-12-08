@@ -2,6 +2,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 import kotlin.io.path.Path
 import kotlin.io.path.readText
+import kotlin.math.abs
 
 /**
  * Reads lines from the given input txt file.
@@ -38,4 +39,12 @@ fun <T> MutableList<T>.swap(index1: Int, index2: Int) {
     val temp = this[index1]
     this[index1] = this[index2]
     this[index2] = temp
+}
+
+fun gcd(a: Int, b: Int): Int {
+    return if (b == 0) a else gcd(b, a % b)
+}
+
+fun lcm(a: Int, b: Int): Int {
+    return abs(a * b) / gcd(a, b)
 }
